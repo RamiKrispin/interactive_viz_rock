@@ -1,5 +1,5 @@
 ---
-title: "Untitled"
+title: "Which one is easy to analyze"
 output: 
   flexdashboard::flex_dashboard:
     orientation: rows
