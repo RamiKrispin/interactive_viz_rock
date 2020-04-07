@@ -1,0 +1,38 @@
+---
+title: "Untitled"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: rows
+    vertical_layout: fill
+---
+
+```{r setup, include=FALSE}
+library(flexdashboard)
+library(USgrid)
+data("US_elec")
+`%>%` <- magrittr::`%>%`
+df <- US_elec %>% dplyr::filter(type == "demand") %>% as.data.frame()
+
+```
+
+Row
+-----------------------------------------------------------------------
+
+### Non Interactive
+
+```{r fig.width=12}
+ggplot2::ggplot(data = df, ggplot2::aes(x = date_time, y = series))+
+  ggplot2::geom_line()
+```
+
+Row
+-----------------------------------------------------------------------
+
+### Interactive 
+
+```{r}
+TSstudio::ts_plot(df, slider = TRUE)
+```
+
+
+
