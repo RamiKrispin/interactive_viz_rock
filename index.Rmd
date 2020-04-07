@@ -1,5 +1,5 @@
 ---
-title: "Which one is easy to analyze"
+title: "The Demand for electricity in the US"
 output: 
   flexdashboard::flex_dashboard:
     orientation: rows
@@ -20,7 +20,7 @@ Row
 
 ### Non Interactive
 
-```{r fig.width=12}
+```{r fig.width=20}
 ggplot2::ggplot(data = df, ggplot2::aes(x = date_time, y = series))+
   ggplot2::geom_line()
 ```
